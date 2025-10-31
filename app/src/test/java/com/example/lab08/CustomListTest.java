@@ -5,8 +5,9 @@ import static org.junit.Assert.*;
 
 public class CustomListTest {
 
+    // --- hasCity ---
     @Test
-    public void hasCity_returnsTrue_whenCityPresent() {
+    public void hasCity_true_whenPresent() {
         CustomList list = new CustomList();
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
@@ -14,9 +15,8 @@ public class CustomListTest {
     }
 
     @Test
-    public void hasCity_returnsFalse_whenCityAbsent() {
+    public void hasCity_false_whenAbsent() {
         CustomList list = new CustomList();
-        City edmonton = new City("Edmonton", "AB");
-        assertFalse(list.hasCity(edmonton));
+        assertFalse(list.hasCity(new City("Edmonton", "AB")));
     }
 }
